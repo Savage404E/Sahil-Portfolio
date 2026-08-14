@@ -3,400 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAVAGE - Creative Developer</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Sahil Sunil Kadam — Developer from Pune, India. Python, C++, React, Next.js. Turning complex problems into elegant solutions.">
+    <title>Sahil Kadam — Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
-            <div class="loading-text">SAVAGE</div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
+
+    <div class="boot-screen" id="bootScreen">
+        <div class="boot-terminal">
+            <div class="boot-line"><span class="boot-prompt">sahil@dev</span>:<span class="boot-cmd">init portfolio.sh</span></div>
+            <div class="boot-line">loading modules ............ <span class="boot-ok">OK</span></div>
+            <div class="boot-line">compiling skills ........... <span class="boot-ok">OK</span></div>
+            <div class="boot-line">rendering aurora .......... <span class="boot-ok">OK</span></div>
+            <div class="boot-bar"><span class="boot-bar-fill"></span></div>
         </div>
     </div>
 
-    <!-- Navigation -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">SAVAGE</span>
-            </div>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link active" data-section="home">Home</a>
-                <a href="#about" class="nav-link" data-section="about">About</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="nav-inner">
+            <a href="#home" class="nav-brand">
+                <span class="brand-bracket">&lt;</span>Sahil<span class="brand-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link active">about</a></li>
+                <li><a href="#projects" class="nav-link">projects</a></li>
+                <li><a href="#certifications" class="nav-link">certifications</a></li>
+                <li><a href="#skills" class="nav-link">skills</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Hire me</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section" id="home">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="glitch-text" data-text="SAVAGE">SAVAGE</span>
-                    </h1>
-                    <p class="hero-subtitle">Creative Developer & Digital Artist</p>
-                    <div class="hero-description">
-                        <p>Crafting digital experiences with passion and precision</p>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary" data-section="projects">View Projects</a>
-                        <a href="#contact" class="btn btn-secondary" data-section="contact">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="glitch-container">
-                        <div class="glitch-element"></div>
-                        <div class="glitch-element"></div>
-                        <div class="glitch-element"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow"></div>
-            </div>
-        </section>
+    <div class="aurora" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <canvas id="particles"></canvas>
 
-        <!-- About Section -->
-        <section class="about-section" id="about">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-text">About Me</span>
-                    <span class="title-decoration"></span>
-                </h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Hello! I'm Sahil Sunil Kadam, a passionate full-stack developer and bot developer with a keen eye for design and a love for creating innovative digital solutions.</p>
-                        <p>My journey in tech has been driven by curiosity and a desire to push boundaries. From building complex Discord bots to crafting beautiful web applications, I thrive on challenges that allow me to blend creativity with technical expertise.</p>
-                        <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or creating digital art that inspires my next development venture.</p>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-greeting"><span class="tick">//</span> hello world, i'm</p>
+                    <h1 class="hero-name">Sahil Sunil <span class="gradient-text">Kadam</span></h1>
+                    <div class="hero-roles">
+                        <span class="role-prefix">$</span> <span class="typed-text" id="typedText"></span><span class="caret"></span>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">2+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Happy Clients</span>
-                        </div>
+                    <p class="hero-summary">
+                        Developer · CS Student from Pune — crafting responsive React interfaces, optimizing
+                        database queries, and wrangling data with Pandas &amp; NumPy. I turn complex problems into
+                        elegant solutions.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="mailto:sahil22kadam@gmail.com" class="btn btn-primary">Get in touch <i class="fas fa-arrow-right"></i></a>
+                        <a href="#projects" class="btn btn-ghost">View work <i class="fas fa-code"></i></a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/Savage404E" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sahil-kadam-473096383" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://discord.gg/besavage" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://leetcode.com/u/Xycv6Bgqkw/" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                        <a href="mailto:sahil22kadam@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <div class="hero-cursor-hint">
+                        <span class="mouse"><span class="mouse-wheel"></span></span>
+                        scroll to explore
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="projects-section" id="projects">
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>PYTHON</span><i>◆</i><span>REACT</span><i>◆</i><span>NEXT.JS</span><i>◆</i><span>C++</span><i>◆</i><span>TYPESCRIPT</span><i>◆</i><span>NODE</span><i>◆</i><span>POSTGRESQL</span><i>◆</i><span>MONGO</span><i>◆</i><span>PANDAS</span><i>◆</i><span>NUMPY</span><i>◆</i><span>REDIS</span><i>◆</i><span>VUE</span><i>◆</i><span>ANGULAR</span><i>◆</i><span>LINUX</span><i>◆</i>
+                <span>PYTHON</span><i>◆</i><span>REACT</span><i>◆</i><span>NEXT.JS</span><i>◆</i><span>C++</span><i>◆</i><span>TYPESCRIPT</span><i>◆</i><span>NODE</span><i>◆</i><span>POSTGRESQL</span><i>◆</i><span>MONGO</span><i>◆</i><span>PANDAS</span><i>◆</i><span>NUMPY</span><i>◆</i><span>REDIS</span><i>◆</i><span>VUE</span><i>◆</i><span>ANGULAR</span><i>◆</i><span>LINUX</span><i>◆</i>
+            </div>
+        </div>
+
+        <section class="about" id="about">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-text">Featured Projects</span>
-                    <span class="title-decoration"></span>
-                </h2>
+                <div class="section-head">
+                    <span class="section-index">01</span>
+                    <h2 class="section-title">about<span class="dot">.</span></h2>
+                    <p class="section-sub">who is behind the code</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card reveal">
+                        <p class="about-text">
+                            I'm <strong>Sahil Kadam</strong>, a passionate developer currently pursuing a <strong>B.Sc. in Computer Science</strong>.
+                            I combine strong foundations in <strong>Python</strong> and <strong>C++</strong> with modern web technologies —
+                            crafting responsive React interfaces, optimizing database queries, and analyzing data with
+                            Pandas and NumPy. Always learning, always building.
+                        </p>
+                        <p class="about-text">
+                            I bring strong <strong>problem-solving</strong>, <strong>critical thinking</strong>, and
+                            <strong>innovative planning</strong> to every project. Whether shipping features on GitHub or
+                            learning on Linux, I focus on writing clean code and delivering solutions that actually work.
+                        </p>
+                        <div class="about-meta">
+                            <div class="meta-row"><span class="meta-key">name</span><span class="meta-val">Sahil Sunil Kadam</span></div>
+                            <div class="meta-row"><span class="meta-key">location</span><span class="meta-val">Pune, Maharashtra, India</span></div>
+                            <div class="meta-row"><span class="meta-key">education</span><span class="meta-val">B.Sc. CS · Pratibha College, Pune</span></div>
+                            <div class="meta-row"><span class="meta-key">status</span><span class="meta-val green">open to opportunities</span></div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats reveal">
+                        <div class="stat-card">
+                            <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">programming languages</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">frameworks &amp; libraries</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">core projects shipped</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">years in the game</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index">02</span>
+                    <h2 class="section-title">projects<span class="dot">.</span></h2>
+                    <p class="section-sub">things i've built</p>
+                </div>
+
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://github.com/Savage404E" target="_blank" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="#" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                            </div>
+                    <article class="project-card reveal">
+                        <div class="project-top">
+                            <span class="project-num">01</span>
+                            <span class="project-status"><span class="pulse"></span> live &amp; maintained</span>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Discord Savage Bot</h3>
-                            <p class="project-description">Advanced Discord bot with economy systems, games, and moderation features serving 500+ users across 100+ servers.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Discord.js</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                            </div>
+                        <h3 class="project-name">Resume Portfolio Website</h3>
+                        <p class="project-desc">
+                            This very site — a modern, animated portfolio engine built to showcase a resume as an
+                            interactive experience instead of a static PDF.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Savage404E" target="_blank" rel="noopener"><i class="fab fa-github"></i> code</a>
+                            <a href="#home"><i class="fas fa-arrow-up-right-from-square"></i> live</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-top">
+                            <span class="project-num">02</span>
+                            <span class="project-status"><span class="pulse"></span> built with canvas</span>
+                        </div>
+                        <h3 class="project-name">Canvas App</h3>
+                        <p class="project-desc">
+                            An interactive canvas-based application exploring creative drawing tools, animations,
+                            and generative visuals rendered directly in the browser.
+                        </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span><span>HTML5 Canvas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Savage404E" target="_blank" rel="noopener"><i class="fab fa-github"></i> code</a>
+                            <a href="#home"><i class="fas fa-arrow-up-right-from-square"></i> live</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-top">
+                            <span class="project-num">03</span>
+                            <span class="project-status"><span class="pulse"></span> automation</span>
+                        </div>
+                        <h3 class="project-name">Discord Bot</h3>
+                        <p class="project-desc">
+                            A feature-packed Discord bot handling moderation, economy systems, and fun commands —
+                            built on my own personal Discord signature, "be savage".
+                        </p>
+                        <div class="project-tags">
+                            <span>Node.js</span><span>Discord.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Savage404E" target="_blank" rel="noopener"><i class="fab fa-github"></i> code</a>
+                            <a href="https://discord.gg/besavage" target="_blank" rel="noopener"><i class="fab fa-discord"></i> discord</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="certs" id="certifications">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index">03</span>
+                    <h2 class="section-title">certifications<span class="dot">.</span></h2>
+                    <p class="section-sub">proof of the grind</p>
+                </div>
+
+                <div class="certs-grid">
+                    <div class="cert-card reveal">
+                        <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+                        <div>
+                            <h3 class="cert-name">Fundamentals of Digital Marketing</h3>
+                            <p class="cert-org">Google Digital Garage</p>
+                        </div>
+                        <span class="cert-year">2026</span>
+                    </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                        <div>
+                            <h3 class="cert-name">Machine Learning using Python</h3>
+                            <p class="cert-org">Simplilearn</p>
+                        </div>
+                        <span class="cert-year">2026</span>
+                    </div>
+                    <div class="cert-card reveal">
+                        <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            <h3 class="cert-name">B.Sc. Computer Science (SY)</h3>
+                            <p class="cert-org">Pratibha College of Commerce &amp; Computer Studies, Chinchwad, Pune</p>
+                        </div>
+                        <span class="cert-year">2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-index">04</span>
+                    <h2 class="section-title">skills<span class="dot">.</span></h2>
+                    <p class="section-sub">the weapons of choice</p>
+                </div>
+
+                <div class="skills-grid" id="skillsGrid">
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><i class="fas fa-terminal"></i> Programming Languages</h3>
+                        <div class="skill-chips">
+                            <span class="chip">Python</span><span class="chip">C++</span><span class="chip">HTML</span>
+                            <span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span>
                         </div>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://github.com/Savage404E" target="_blank" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="#" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Portfolio Website</h3>
-                            <p class="project-description">Interactive desktop-style portfolio showcasing creative web development with modern animations and responsive design.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><i class="fas fa-layer-group"></i> Frameworks &amp; Libraries</h3>
+                        <div class="skill-chips">
+                            <span class="chip">React</span><span class="chip">Angular</span><span class="chip">Vue</span>
+                            <span class="chip">Next.js</span><span class="chip">Node</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
                         </div>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://github.com/Savage404E" target="_blank" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="#" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><i class="fas fa-database"></i> Databases &amp; Tools</h3>
+                        <div class="skill-chips">
+                            <span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Git &amp; GitHub</span>
+                            <span class="chip">Redis</span><span class="chip">CI/CD</span><span class="chip">AI Tools</span>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">AI Chat Assistant</h3>
-                            <p class="project-description">Intelligent chatbot powered by machine learning algorithms for natural language processing and response generation.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">TensorFlow</span>
-                                <span class="tech-tag">NLP</span>
-                            </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><i class="fas fa-grip"></i> Command Lines</h3>
+                        <div class="skill-chips">
+                            <span class="chip">Windows</span><span class="chip">Linux</span><span class="chip">PowerShell</span><span class="chip">Bash</span>
+                        </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><i class="fas fa-brain"></i> Soft Skills</h3>
+                        <div class="skill-chips">
+                            <span class="chip">Problem Solving</span><span class="chip">Innovative Thinking</span>
+                            <span class="chip">General Awareness</span><span class="chip">Communication</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="skills-section" id="skills">
+        <section class="contact" id="contact">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-text">Technical Skills</span>
-                    <span class="title-decoration"></span>
-                </h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3 class="category-title">Programming Languages</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span class="skill-name">JavaScript</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Python</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">C</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">C++</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 65%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Java</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 60%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3 class="category-title">Web Development</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span class="skill-name">HTML/CSS</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">React</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Node.js</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Express.js</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 75%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3 class="category-title">Databases</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span class="skill-name">SQL</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">MongoDB</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">MySQL</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">PostgreSQL</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 65%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3 class="category-title">Tools & Technologies</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span class="skill-name">Git/GitHub</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Linux/Unix</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Docker</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Discord.js</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 90%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3 class="category-title">AI & Machine Learning</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span class="skill-name">TensorFlow</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Scikit-learn</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 65%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">NLP</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Data Analysis</span>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--skill-level: 75%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="section-head">
+                    <span class="section-index">05</span>
+                    <h2 class="section-title">contact<span class="dot">.</span></h2>
+                    <p class="section-sub">let's build something together</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-text">Get In Touch</span>
-                    <span class="title-decoration"></span>
-                </h2>
-                <div class="contact-content">
-                    <div class="contact-text">
-                        <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
-                    </div>
-                    <div class="contact-methods">
-                        <a href="https://github.com/Savage404E" target="_blank" class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sahil-kadam-473096383/" target="_blank" class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://discord.com/oauth2/authorize?client_id=1314876077625180212" target="_blank" class="contact-method">
-                            <i class="fab fa-discord"></i>
-                            <span>Discord Bot</span>
-                        </a>
-                        <a href="mailto:sahil.kadam@example.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
-                    </div>
+                <div class="contact-grid">
+                    <a class="contact-card reveal" href="mailto:sahil22kadam@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        <span class="contact-label">email</span>
+                        <span class="contact-value">sahil22kadam@gmail.com</span>
+                    </a>
+                    <a class="contact-card reveal" href="https://github.com/Savage404E" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                        <span class="contact-label">github</span>
+                        <span class="contact-value">@Savage404E</span>
+                    </a>
+                    <a class="contact-card reveal" href="https://www.linkedin.com/in/sahil-kadam-473096383" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="contact-label">linkedin</span>
+                        <span class="contact-value">/in/sahil-kadam-473096383</span>
+                    </a>
+                    <a class="contact-card reveal" href="https://discord.gg/besavage" target="_blank" rel="noopener">
+                        <i class="fab fa-discord"></i>
+                        <span class="contact-label">discord</span>
+                        <span class="contact-value">beSavage</span>
+                    </a>
+                    <a class="contact-card reveal" href="https://leetcode.com/u/Xycv6Bgqkw/" target="_blank" rel="noopener">
+                        <i class="fas fa-code"></i>
+                        <span class="contact-label">leetcode</span>
+                        <span class="contact-value">/u/Xycv6Bgqkw</span>
+                    </a>
+                </div>
+
+                <div class="contact-cta reveal">
+                    <p class="cta-typing"><span class="tick">$</span> <span id="ctaText"></span><span class="caret"></span></p>
+                    <a href="mailto:sahil22kadam@gmail.com" class="btn btn-primary btn-lg">Start a conversation <i class="fas fa-paper-plane"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 SAVAGE. All rights reserved.</p>
-                <p>Crafted with <span class="heart">❤</span> and lots of <span class="coffee">☕</span></p>
-            </div>
+        <div class="container footer-inner">
+            <p class="footer-brand"><span class="brand-bracket">&lt;</span>Sahil<span class="brand-bracket">/&gt;</span></p>
+            <p class="footer-line"><span class="tick">//</span> designed &amp; built by Sahil Sunil Kadam · Pune, India</p>
+            <p class="footer-copy">© <span id="year">2026</span> — no template, 100% custom.</p>
         </div>
     </footer>
+
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <script src="script.js"></script>
 </body>
